@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation </title>
+    <style>
+        body {
+            background-image: url('www.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        /* Styling pour le formulaire */
+        form {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        /* Styling pour la météo */
+        #weather {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="process_reservation.php" method="post">
+    <h1 style="color:#26c929"> Réservation </h1>
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required>
+        
+        <label for="email">Adresse mail:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="date_arrivee">Date d'arrivée:</label>
+        <input type="date" id="date_arrivee" name="date_arrivee" required>
+        
+        <label for="date_depart">Date de départ:</label>
+        <input type="date" id="date_depart" name="date_depart" required>
+        
+        <label for="type_chambre">Type de hébergement:</label>
+        <select id="type_chambre" name="type_chambre">
+            <option value="simple">1 personne + 1 vélo + Tente
+            </option>
+            <option value="double"> 2 personnes caravane + voiture  </option>
+            <option value="suite"> 1 personne + voiture + Tente  
+            </option>
+            <option value="suite"> 2 personnes camping car  
+            </option>
+            <option value="suite">  1 personne +moto +Tente  
+            </option>
+            <label for="nombre">Nombre:</label>
+            <input type="number" id="nombre" name="nombre" min="1" max="70" required>
+            
+        </select><br><br>
+        <label for="type_Supplément">choisissez un Supplément :</label>
+        <select id="type_chambre" name="type_Supplément">
+            <option value="chien">Chien 
+            </option>
+            <option value="enfants"> Enfants moins de 7 ans  </option>
+            <option value="électricité">Electricité
+            </option>
+            <label for="nombre">Nombre:</label>
+            <input type="number" id="nombre" name="nombre" min="1"  max="70"required>
+            
+        </select>
+        <br><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6"></textarea> <!-- Augmentation des lignes à 6 -->
+        
+        <input type="submit" value="Envoyer">
+    </form>
+    <div class="contact-container">
+        <h2>Contactez-nous</h2>
+        <div class="contact-item">
+            <label for="email">Email:</label>
+            <p id="email"><a href="philippe.infuso@laposte.net">philippe.infuso@laposte.net</a></p>
+        </div>
+        <div class="contact-item">
+            <label for="telephone">Téléphone:</label>
+            <p id="telephone"><a href="tel:+33 3 24 27 77 04">+33 3 24 27 77 04</a></p>
+            <p id="telephone"><a href="tel:+33 6 80 63 32 72">+33 6 80 63 32 72</a></p>
+        </div>
+        <div class="contact-item">
+            <label for="adresse">Adresse:</label>
+            <p id="adresse">
+                Camping La Clé des Champs
+
+Rue des Grands Jardins 49
+
+Rancennes 08600
+
+France
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>
